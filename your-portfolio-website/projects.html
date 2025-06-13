@@ -1,0 +1,298 @@
+<!-- projects.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Seth Cloud Engineer</title>
+    <meta name="description" content="AWS cloud engineering projects demonstrating real-world solutions">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">CloudEngineer</a>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="projects.html" class="nav-link active">Projects</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="projects-hero">
+            <div class="container">
+                <h1>My Projects</h1>
+                <p class="lead">AWS cloud solutions solving real-world business challenges</p>
+            </div>
+        </section>
+
+        <section class="projects-grid-section">
+            <div class="container">
+                <div class="projects-grid">
+
+                    <!-- Project 1: Static Website -->
+                    <div class="project-card detailed">
+                        <div class="project-header">
+                            <div class="project-icon">🌐</div>
+                            <div class="project-meta">
+                                <h3>Static Website with Global CDN</h3>
+                                <p class="project-type">Web Hosting • Performance Optimization</p>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <p>Professional portfolio website hosted on AWS S3 with CloudFront CDN distribution, custom
+                                domain via Route 53, and automated CI/CD deployment through GitHub Actions.</p>
+                        </div>
+                        <div class="project-highlights">
+                            <h4>Key Achievements:</h4>
+                            <ul>
+                                <li>99.99% uptime with global load times under 1 second</li>
+                                <li>$3/month hosting cost (90% savings vs traditional hosting)</li>
+                                <li>Automated SSL certificate management</li>
+                                <li>Zero-downtime deployments</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">S3</span>
+                            <span class="tech-tag">CloudFront</span>
+                            <span class="tech-tag">Route 53</span>
+                            <span class="tech-tag">Certificate Manager</span>
+                            <span class="tech-tag">GitHub Actions</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+                            <a href="#" class="btn btn-sm btn-outline">View Code</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Multi-Tier App -->
+                    <div class="project-card detailed">
+                        <div class="project-header">
+                            <div class="project-icon">🏗️</div>
+                            <div class="project-meta">
+                                <h3>Multi-Tier Web Application</h3>
+                                <p class="project-type">High Availability • Auto Scaling</p>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <p>Three-tier web application with presentation, application, and database layers. Features
+                                auto-scaling, load balancing, and high availability across multiple AZs.</p>
+                        </div>
+                        <div class="project-highlights">
+                            <h4>Key Achievements:</h4>
+                            <ul>
+                                <li>Handles 10,000+ concurrent users</li>
+                                <li>Auto-scales from 2-10 instances based on demand</li>
+                                <li>Multi-AZ RDS deployment for 99.95% uptime</li>
+                                <li>Implemented least-privilege security model</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">EC2</span>
+                            <span class="tech-tag">ALB</span>
+                            <span class="tech-tag">Auto Scaling</span>
+                            <span class="tech-tag">RDS</span>
+                            <span class="tech-tag">VPC</span>
+                            <span class="tech-tag">CloudWatch</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-primary">Architecture</a>
+                            <a href="#" class="btn btn-sm btn-outline">Documentation</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Serverless Pipeline -->
+                    <div class="project-card detailed">
+                        <div class="project-header">
+                            <div class="project-icon">⚡</div>
+                            <div class="project-meta">
+                                <h3>Serverless Data Processing Pipeline</h3>
+                                <p class="project-type">Event-Driven • Cost Optimization</p>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <p>Event-driven serverless pipeline that automatically processes CSV files uploaded to S3,
+                                transforms data, and stores results in DynamoDB with comprehensive monitoring.</p>
+                        </div>
+                        <div class="project-highlights">
+                            <h4>Key Achievements:</h4>
+                            <ul>
+                                <li>Processes 1000s of files daily with zero infrastructure management</li>
+                                <li>95% cost reduction vs traditional server-based solution</li>
+                                <li>Sub-second processing latency</li>
+                                <li>Fault-tolerant with dead letter queue handling</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Lambda</span>
+                            <span class="tech-tag">S3</span>
+                            <span class="tech-tag">DynamoDB</span>
+                            <span class="tech-tag">SQS</span>
+                            <span class="tech-tag">CloudWatch</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-primary">Flow Diagram</a>
+                            <a href="#" class="btn btn-sm btn-outline">Source Code</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Disaster Recovery -->
+                    <div class="project-card detailed">
+                        <div class="project-header">
+                            <div class="project-icon">🔄</div>
+                            <div class="project-meta">
+                                <h3>Disaster Recovery Solution</h3>
+                                <p class="project-type">Business Continuity • Multi-Region</p>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <p>Cross-region disaster recovery implementation with automated failover, data replication,
+                                and comprehensive testing procedures to ensure business continuity.</p>
+                        </div>
+                        <div class="project-highlights">
+                            <h4>Key Achievements:</h4>
+                            <ul>
+                                <li>RTO of 30 minutes, RPO of 15 minutes</li>
+                                <li>Automated failover with Route 53 health checks</li>
+                                <li>Cross-region S3 and RDS replication</li>
+                                <li>Infrastructure as Code for consistent deployment</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Route 53</span>
+                            <span class="tech-tag">S3 CRR</span>
+                            <span class="tech-tag">RDS</span>
+                            <span class="tech-tag">CloudFormation</span>
+                            <span class="tech-tag">Lambda</span>
+                            <span class="tech-tag">SNS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-primary">DR Plan</a>
+                            <a href="#" class="btn btn-sm btn-outline">Templates</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: CI/CD Pipeline -->
+                    <div class="project-card detailed">
+                        <div class="project-header">
+                            <div class="project-icon">🚀</div>
+                            <div class="project-meta">
+                                <h3>CI/CD Pipeline with Blue-Green Deployment</h3>
+                                <p class="project-type">DevOps • Automation</p>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <p>Complete CI/CD pipeline with blue-green deployment strategy, automated testing, approval
+                                gates, and instant rollback capabilities for zero-downtime deployments.</p>
+                        </div>
+                        <div class="project-highlights">
+                            <h4>Key Achievements:</h4>
+                            <ul>
+                                <li>Zero-downtime deployments with instant rollback</li>
+                                <li>Reduced deployment time from 2 hours to 15 minutes</li>
+                                <li>Automated testing at every stage</li>
+                                <li>Infrastructure versioning and rollback</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">CodePipeline</span>
+                            <span class="tech-tag">CodeBuild</span>
+                            <span class="tech-tag">CodeDeploy</span>
+                            <span class="tech-tag">CloudFormation</span>
+                            <span class="tech-tag">Parameter Store</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-primary">Pipeline View</a>
+                            <a href="#" class="btn btn-sm btn-outline">Setup Guide</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Cost Optimization -->
+                    <div class="project-card detailed">
+                        <div class="project-header">
+                            <div class="project-icon">💰</div>
+                            <div class="project-meta">
+                                <h3>Cost Optimization & Monitoring System</h3>
+                                <p class="project-type">FinOps • Automation</p>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <p>Automated cost monitoring system that provides recommendations, implements optimizations,
+                                and tracks savings across AWS accounts with detailed reporting.</p>
+                        </div>
+                        <div class="project-highlights">
+                            <h4>Key Achievements:</h4>
+                            <ul>
+                                <li>Identified $2,000+ monthly savings opportunities</li>
+                                <li>Automated right-sizing recommendations</li>
+                                <li>Real-time budget alerts and forecasting</li>
+                                <li>Historical cost trend analysis</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Cost Explorer API</span>
+                            <span class="tech-tag">Budget API</span>
+                            <span class="tech-tag">Lambda</span>
+                            <span class="tech-tag">DynamoDB</span>
+                            <span class="tech-tag">CloudWatch</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-primary">Dashboard</a>
+                            <a href="#" class="btn btn-sm btn-outline">Reports</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="projects-cta">
+                    <h2>Interested in seeing more details?</h2>
+                    <p>Each project includes comprehensive documentation, architecture diagrams, and lessons learned.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📧 s3thtjp@hotmail.com</p>
+                    <p>💼 LinkedIn: /in/sethpetty/</p>
+                    <p>🐙 GitHub: /s3thtjp</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 [Your Name]. Built with AWS ☁️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
