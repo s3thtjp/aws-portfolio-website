@@ -1,7 +1,6 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
-
 <body>
     <header>
         <nav class="navbar">
@@ -37,295 +35,124 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <div class="hero-title-container">
-                    <h1 class="hero-title">
-                        <span class="static-text">I'm a</span>
-                        <div class="marquee-container">
-                            <div class="marquee">
-                                <span>AWS Cloud Engineer Associate</span>
-                                <span>Cloud Consultant</span>
-                                <span>Solutions Architect</span>
-                                <span>DevOps Associate</span>
-                            </div>
-                            <div class="marquee" aria-hidden="true">
-                                <span>AWS Cloud Engineer Associate</span>
-                                <span>Cloud Consultant</span>
-                                <span>Solutions Architect</span>
-                                <span>DevOps Associate</span>
-                            </div>
-                        </div>
-                    </h1>
-                </div>
+                <h1 class="hero-title">Hello, I'm <span class="highlight">Seth</span></h1>
+                <h2 class="hero-subtitle">AWS Cloud Engineer</h2>
                 <p class="hero-description">
-                    Transform your business with enterprise-grade cloud solutions. I specialize in architecting
-                    scalable, secure, and cost-effective AWS infrastructure that drives innovation and growth. Let's
-                    build your future in the cloud.
+                    Specializing in scalable, secure, and cost-effective cloud solutions. 
+                    Passionate about automation, infrastructure as code, and solving complex business challenges.
                 </p>
                 <div class="hero-buttons">
-                    <a href="contact.html" class="btn btn-primary">Download Resume</a>
+                    <a href="projects.html" class="btn btn-primary">View My Work</a>
+                    <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
                 </div>
             </div>
             <div class="hero-image">
-                <svg class="cloud-background" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:rgba(100, 255, 218, 0.2)" />
-                            <stop offset="100%" style="stop-color:rgba(100, 255, 218, 0.05)" />
-                        </linearGradient>
-                    </defs>
-                    <path
-                        d="M400,200 Q500,150 600,200 Q700,250 650,300 Q600,350 500,350 Q400,400 300,350 Q200,300 250,250 Q300,200 400,200"
-                        fill="url(#cloudGradient)" />
-                    <path
-                        d="M200,400 Q300,350 400,400 Q500,450 450,500 Q400,550 300,550 Q200,500 250,450 Q300,400 200,400"
-                        fill="url(#cloudGradient)" />
-                    <path
-                        d="M500,100 Q600,50 700,100 Q800,150 750,200 Q700,250 600,250 Q500,300 400,250 Q300,200 350,150 Q400,100 500,100"
-                        fill="url(#cloudGradient)" />
-                </svg>
+                <div class="cloud-icon">☁️</div>
             </div>
         </section>
 
-        <!-- Feature Section 1 -->
-        <section class="feature-section">
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
             <div class="container">
-                <div class="feature-grid">
-                    <div class="feature-image">
-                        <svg class="feature-svg" viewBox="0 0 400 300">
-                            <rect x="50" y="50" width="300" height="200" fill="#f0f0f0" rx="10" />
-                            <circle cx="200" cy="150" r="50" fill="#e74c3c" />
-                            <text x="200" y="160" text-anchor="middle" fill="white">AWS</text>
-                        </svg>
-                    </div>
-                    <div class="feature-content">
-                        <h2>Enterprise Cloud Architecture</h2>
-                        <p>Design and implement robust cloud infrastructure that scales with your business. From
-                            high-availability systems to disaster recovery solutions, I ensure your applications run
-                            smoothly 24/7.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Feature Section 2 -->
-        <section class="feature-section alt">
-            <div class="container">
-                <div class="feature-grid reverse">
-                    <div class="feature-content">
-                        <h2>Security-First Approach</h2>
-                        <p>Protect your valuable data with industry-leading security practices. I implement
-                            comprehensive security measures including encryption, IAM policies, and compliance
-                            frameworks to keep your infrastructure safe.</p>
-                    </div>
-                    <div class="feature-image">
-                        <svg class="feature-svg" viewBox="0 0 400 300">
-                            <rect x="50" y="50" width="300" height="200" fill="#f0f0f0" rx="10" />
-                            <path d="M200,100 L250,150 L200,200 L150,150 Z" fill="#e74c3c" />
-                            <text x="200" y="160" text-anchor="middle" fill="white">SEC</text>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Feature Section 3 -->
-        <section class="feature-section">
-            <div class="container">
-                <div class="feature-grid">
-                    <div class="feature-image">
-                        <svg class="feature-svg" viewBox="0 0 400 300">
-                            <rect x="50" y="50" width="300" height="200" fill="#f0f0f0" rx="10" />
-                            <path d="M150,100 L250,100 L250,200 L150,200 Z" fill="#e74c3c" />
-                            <text x="200" y="160" text-anchor="middle" fill="white">AUTO</text>
-                        </svg>
-                    </div>
-                    <div class="feature-content">
-                        <h2>DevOps Excellence</h2>
-                        <p>Streamline your development process with automated CI/CD pipelines, infrastructure as code,
-                            and monitoring solutions. Reduce deployment time and increase reliability with modern DevOps
-                            practices.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA Section -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>Ready to Transform Your Business?</h2>
-                    <p>Join hundreds of satisfied clients who have modernized their infrastructure and accelerated their
-                        growth with cloud solutions.</p>
-                    <div class="cta-buttons">
-                        <a href="contact.html" class="btn btn-primary">Get Started Now</a>
-                    </div>
-                    <div class="trust-elements">
-                        <div class="trust-item">
-                            <span class="trust-number">500+</span>
-                            <span class="trust-label">Projects Completed</span>
-                        </div>
-                        <div class="trust-item">
-                            <span class="trust-number">98%</span>
-                            <span class="trust-label">Client Satisfaction</span>
-                        </div>
-                        <div class="trust-item">
-                            <span class="trust-number">15+</span>
-                            <span class="trust-label">Years Experience</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Cloud Skills Section -->
-        <section class="skills-section">
-            <div class="container">
-                <h2 class="section-title">Cloud Expertise</h2>
+                <h2 class="section-title">Core Competencies</h2>
                 <div class="skills-grid">
                     <div class="skill-card">
-                        <div class="skill-icon">
-                            <svg viewBox="0 0 24 24" class="skill-svg">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="none"
-                                    stroke="currentColor" stroke-width="2" />
-                            </svg>
-                        </div>
+                        <div class="skill-icon">🏗️</div>
                         <h3>Infrastructure as Code</h3>
-                        <ul class="skill-list">
-                            <li>Terraform</li>
-                            <li>CloudFormation</li>
-                            <li>Ansible</li>
-                            <li>Pulumi</li>
-                        </ul>
+                        <p>CloudFormation, Terraform, automated deployments</p>
                     </div>
                     <div class="skill-card">
-                        <div class="skill-icon">
-                            <svg viewBox="0 0 24 24" class="skill-svg">
-                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="none"
-                                    stroke="currentColor" stroke-width="2" />
-                            </svg>
-                        </div>
+                        <div class="skill-icon">🔒</div>
                         <h3>Security & Compliance</h3>
-                        <ul class="skill-list">
-                            <li>AWS IAM</li>
-                            <li>Security Groups</li>
-                            <li>KMS</li>
-                            <li>WAF</li>
-                        </ul>
+                        <p>IAM, encryption, security best practices</p>
                     </div>
                     <div class="skill-card">
-                        <div class="skill-icon">
-                            <svg viewBox="0 0 24 24" class="skill-svg">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                                    fill="none" stroke="currentColor" stroke-width="2" />
-                            </svg>
-                        </div>
-                        <h3>DevOps & CI/CD</h3>
-                        <ul class="skill-list">
-                            <li>Jenkins</li>
-                            <li>GitHub Actions</li>
-                            <li>Docker</li>
-                            <li>Kubernetes</li>
-                        </ul>
+                        <div class="skill-icon">📊</div>
+                        <h3>Monitoring & Optimization</h3>
+                        <p>CloudWatch, cost optimization, performance tuning</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">⚡</div>
+                        <h3>Serverless Architecture</h3>
+                        <p>Lambda, API Gateway, event-driven solutions</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Featured Projects Section -->
-        <section class="projects-section">
+        <!-- Featured Projects -->
+        <section class="featured-projects" id="featured-projects">
             <div class="container">
                 <h2 class="section-title">Featured Projects</h2>
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image">
-                            <div class="project-overlay">
-                                <span class="project-category">Infrastructure</span>
-                            </div>
-                            <svg class="project-placeholder" viewBox="0 0 400 300">
-                                <rect width="400" height="300" fill="#112240" />
-                                <text x="200" y="150" text-anchor="middle" fill="#64ffda">Multi-Tier Architecture</text>
-                            </svg>
+                            <div class="project-placeholder">🌐</div>
                         </div>
-                        <div class="project-content">
-                            <h3>Enterprise Cloud Migration</h3>
-                            <p>Led the migration of legacy systems to AWS, implementing a multi-tier architecture with
-                                high availability and disaster recovery.</p>
+                        <div class="project-info">
+                            <h3>Multi-Tier Web Application</h3>
+                            <p>High-availability web application with auto-scaling, load balancing, and RDS database deployment across multiple AZs.</p>
                             <div class="project-tech">
                                 <span class="tech-tag">EC2</span>
+                                <span class="tech-tag">ALB</span>
                                 <span class="tech-tag">RDS</span>
-                                <span class="tech-tag">VPC</span>
+                                <span class="tech-tag">Auto Scaling</span>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="project-card">
                         <div class="project-image">
-                            <div class="project-overlay">
-                                <span class="project-category">Serverless</span>
-                            </div>
-                            <svg class="project-placeholder" viewBox="0 0 400 300">
-                                <rect width="400" height="300" fill="#112240" />
-                                <text x="200" y="150" text-anchor="middle" fill="#64ffda">Serverless API</text>
-                            </svg>
+                            <div class="project-placeholder">⚡</div>
                         </div>
-                        <div class="project-content">
+                        <div class="project-info">
                             <h3>Serverless Data Pipeline</h3>
-                            <p>Built a scalable data processing pipeline using AWS Lambda and DynamoDB, reducing
-                                operational costs by 60%.</p>
+                            <p>Cost-effective data processing solution using Lambda, S3, and DynamoDB with automated triggers and monitoring.</p>
                             <div class="project-tech">
                                 <span class="tech-tag">Lambda</span>
+                                <span class="tech-tag">S3</span>
                                 <span class="tech-tag">DynamoDB</span>
-                                <span class="tech-tag">API Gateway</span>
+                                <span class="tech-tag">CloudWatch</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">🔄</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>CI/CD Pipeline</h3>
+                            <p>Automated deployment pipeline with blue-green deployment strategy, automated testing, and rollback capabilities.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">CodePipeline</span>
+                                <span class="tech-tag">CodeBuild</span>
+                                <span class="tech-tag">CodeDeploy</span>
+                                <span class="tech-tag">CloudFormation</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="view-all-projects">
+                    <a href="projects.html" class="btn btn-outline">View All Projects</a>
+                </div>
             </div>
         </section>
 
-        <!-- Certifications Section -->
-        <section class="certifications-section">
+        <!-- AWS Certifications -->
+        <section class="certifications">
             <div class="container">
                 <h2 class="section-title">AWS Certifications</h2>
-                <div class="certifications-grid">
-                    <div class="certification-card">
-                        <div class="certification-image">
-                            <svg class="cert-placeholder" viewBox="0 0 200 200">
-                                <circle cx="100" cy="100" r="80" fill="#112240" />
-                                <text x="100" y="110" text-anchor="middle" fill="#64ffda">AWS SAA</text>
-                            </svg>
-                        </div>
-                        <div class="certification-content">
-                            <h3>AWS Solutions Architect</h3>
-                            <p class="cert-level">Associate Level</p>
-                            <p class="cert-date">Issued: 2024</p>
-                        </div>
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <div class="cert-badge">🏆</div>
+                        <h3>AWS Solutions Architect</h3>
+                        <p>Associate Level - Planned</p>
                     </div>
-                    <div class="certification-card">
-                        <div class="certification-image">
-                            <svg class="cert-placeholder" viewBox="0 0 200 200">
-                                <circle cx="100" cy="100" r="80" fill="#112240" />
-                                <text x="100" y="110" text-anchor="middle" fill="#64ffda">AWS DVA</text>
-                            </svg>
-                        </div>
-                        <div class="certification-content">
-                            <h3>AWS Developer</h3>
-                            <p class="cert-level">Associate Level</p>
-                            <p class="cert-date">Issued: 2024</p>
-                        </div>
-                    </div>
-                    <div class="certification-card">
-                        <div class="certification-image">
-                            <svg class="cert-placeholder" viewBox="0 0 200 200">
-                                <circle cx="100" cy="100" r="80" fill="#112240" />
-                                <text x="100" y="110" text-anchor="middle" fill="#64ffda">AWS CLF</text>
-                            </svg>
-                        </div>
-                        <div class="certification-content">
-                            <h3>AWS Cloud Practitioner</h3>
-                            <p class="cert-level">Foundational Level</p>
-                            <p class="cert-date">Issued: 2023</p>
-                        </div>
+                    <div class="cert-card">
+                        <div class="cert-badge">⭐</div>
+                        <h3>AWS Cloud Practitioner</h3>
+                        <p>Foundational Level - In Progress</p>
                     </div>
                 </div>
             </div>
@@ -338,7 +165,7 @@
                 <div class="footer-section">
                     <h3>Contact</h3>
                     <p>📧 s3thtjp@hotmail.com</p>
-                    <p>💼 LinkedIn: /in/sethpetty/</p>
+                    <p>💼 LinkedIn: /in/sethpetty</p>
                     <p>🐙 GitHub: /s3thtjp</p>
                 </div>
                 <div class="footer-section">
@@ -349,12 +176,11 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Seth. Built with AWS ☁️</p>
+                <p>&copy; 2025 Seth Petty. Built with AWS ☁️</p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
 </body>
-
 </html>
