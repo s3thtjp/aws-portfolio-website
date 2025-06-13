@@ -54,7 +54,7 @@ function initMobileNavigation() {
 }
 
 /**
- * Initialize Contact Form
+ * Handle Contact Form Submission with AWS Backend
  */
 function initContactForm() {
     const contactForm = document.getElementById('contact-form');
@@ -68,12 +68,13 @@ function initContactForm() {
 }
 
 /**
- * Handle Contact Form Submission
+ * Handle Contact Form Submission to AWS Lambda
  */
-function handleFormSubmission() {
+async function handleFormSubmission() {
     const form = document.getElementById('contact-form');
     const statusDiv = document.getElementById('form-status');
     const statusMessage = document.getElementById('status-message');
+    const submitButton = form.querySelector('button[type="submit"]');
 
     // Get form data
     const formData = new FormData(form);
@@ -98,30 +99,45 @@ function handleFormSubmission() {
     }
 
     // Show loading state
-    const submitButton = form.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
     submitButton.textContent = 'Sending...';
     submitButton.disabled = true;
+    showFormStatus('info', 'Sending your message...');
 
-    // Simulate form submission (replace with actual form handling)
-    setTimeout(() => {
-        // For demo purposes, we'll just show a success message
-        // In a real implementation, you would send this to your backend or a service like Formspree
-        console.log('Form data:', data);
+    try {
+        // Replace with your actual API Gateway endpoint
+        const API_ENDPOINT = 'https://3d9zoun2z1.execute-api.us-east-1.amazonaws.com/prod/contact';
 
-        showFormStatus('success', 'Thank you for your message! I\'ll get back to you within 24 hours.');
-        form.reset();
+        const response = await fetch(API_ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
 
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+            showFormStatus('success', result.message);
+            form.reset();
+
+            // Hide status after 10 seconds
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 10000);
+        } else {
+            showFormStatus('error', result.message || 'There was an error sending your message.');
+        }
+
+    } catch (error) {
+        console.error('Form submission error:', error);
+        showFormStatus('error', 'There was an error sending your message. Please try again or email me directly.');
+    } finally {
         // Reset button
         submitButton.textContent = originalText;
         submitButton.disabled = false;
-
-        // Hide status after 5 seconds
-        setTimeout(() => {
-            statusDiv.style.display = 'none';
-        }, 5000);
-
-    }, 2000);
+    }
 }
 
 /**

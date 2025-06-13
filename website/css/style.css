@@ -728,11 +728,14 @@ p {
     border-color: #e74c3c;
 }
 
+/* Enhanced Form Status Styles */
 .form-status {
     margin-top: 1rem;
     padding: 1rem;
     border-radius: 5px;
     text-align: center;
+    font-weight: 500;
+    animation: slideIn 0.3s ease-out;
 }
 
 .form-status.success {
@@ -747,9 +750,41 @@ p {
     border: 1px solid #f5c6cb;
 }
 
-.form-note {
-    margin-top: 1rem;
-    text-align: center;
+.form-status.info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading state for submit button */
+button[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Form validation styles */
+.form-group input:invalid,
+.form-group select:invalid,
+.form-group textarea:invalid {
+    border-color: #dc3545;
+}
+
+.form-group input:valid,
+.form-group select:valid,
+.form-group textarea:valid {
+    border-color: #28a745;
 }
 
 /* CTA Section */
