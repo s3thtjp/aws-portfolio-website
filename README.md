@@ -50,3 +50,23 @@ Professional portfolio website demonstrating cloud engineering expertise through
 4. **Zero downtime** deployment complete
 
 ## 📁 Project Structure
+website/
+├── index.html          # Homepage
+├── about.html          # About page
+├── projects.html       # Projects showcase
+├── contact.html        # Contact information
+├── error.html          # Custom 404 page
+├── css/style.css       # Stylesheet
+├── js/main.js          # JavaScript functionality
+└── images/             # Static assets
+## 🔧 Local Development
+
+```bash
+# Clone repository
+git clone https://github.com/yourusername/aws-portfolio-website.git
+
+# Navigate to website directory
+cd aws-portfolio-website/website
+
+# Open in browser
+open index.html
