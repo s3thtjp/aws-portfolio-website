@@ -54,7 +54,7 @@ function initMobileNavigation() {
 }
 
 /**
- * Handle Contact Form Submission with AWS Backend
+ * Handle Contact Form Submission with Better Error Handling
  */
 function initContactForm() {
     const contactForm = document.getElementById('contact-form');
@@ -68,7 +68,7 @@ function initContactForm() {
 }
 
 /**
- * Handle Contact Form Submission to AWS Lambda
+ * Enhanced Form Submission Handler
  */
 async function handleFormSubmission() {
     const form = document.getElementById('contact-form');
@@ -79,13 +79,15 @@ async function handleFormSubmission() {
     // Get form data
     const formData = new FormData(form);
     const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        company: formData.get('company'),
-        role: formData.get('role'),
-        subject: formData.get('subject'),
-        message: formData.get('message')
+        name: formData.get('name')?.trim() || '',
+        email: formData.get('email')?.trim() || '',
+        company: formData.get('company')?.trim() || '',
+        role: formData.get('role')?.trim() || '',
+        subject: formData.get('subject')?.trim() || '',
+        message: formData.get('message')?.trim() || ''
     };
+
+    console.log('Form data collected:', data);
 
     // Basic validation
     if (!data.name || !data.email || !data.subject || !data.message) {
@@ -105,67 +107,73 @@ async function handleFormSubmission() {
     showFormStatus('info', 'Sending your message...');
 
     try {
-        // Replace with your actual API Gateway endpoint
+        // Your actual API endpoint - UPDATE THIS URL!
         const API_ENDPOINT = 'https://43sug4dn9a.execute-api.us-east-1.amazonaws.com/prod/contact';
+
+        console.log('Making API call to:', API_ENDPOINT);
+        console.log('Sending data:', JSON.stringify(data));
 
         const response = await fetch(API_ENDPOINT, {
             method: 'POST',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             body: JSON.stringify(data)
         });
 
-        const result = await response.json();
+        console.log('Response received:', {
+            status: response.status,
+            statusText: response.statusText,
+            headers: Object.fromEntries(response.headers.entries())
+        });
 
-        if (response.ok && result.success) {
-            showFormStatus('success', result.message);
-            form.reset();
+        let result;
+        try {
+            const responseText = await response.text();
+            console.log('Raw response text:', responseText);
+            result = JSON.parse(responseText);
+            console.log('Parsed result:', result);
+        } catch (parseError) {
+            console.error('Error parsing response:', parseError);
+            throw new Error('Invalid response format from server');
+        }
 
-            // Hide status after 10 seconds
-            setTimeout(() => {
-                statusDiv.style.display = 'none';
-            }, 10000);
+        if (response.ok) {
+            // Success case
+            if (result.success !== false) {
+                showFormStatus('success', result.message || 'Thank you for your message! I\'ll get back to you within 24 hours.');
+                form.reset();
+
+                // Hide status after 10 seconds
+                setTimeout(() => {
+                    statusDiv.style.display = 'none';
+                }, 10000);
+            } else {
+                // API returned success=false
+                showFormStatus('error', result.message || 'There was an error sending your message.');
+            }
         } else {
-            showFormStatus('error', result.message || 'There was an error sending your message.');
+            // HTTP error status
+            showFormStatus('error', result.message || `Server error (${response.status}): ${response.statusText}`);
         }
 
     } catch (error) {
         console.error('Form submission error:', error);
-        showFormStatus('error', 'There was an error sending your message. Please try again or email me directly.');
+
+        // Check if it's a network error
+        if (error.name === 'TypeError' && error.message.includes('fetch')) {
+            showFormStatus('error', 'Network error. Please check your internet connection and try again.');
+        } else if (error.message.includes('CORS')) {
+            showFormStatus('error', 'Configuration error. Please try again later or email me directly.');
+        } else {
+            showFormStatus('error', 'There was an error sending your message. Please try again or email me directly.');
+        }
     } finally {
         // Reset button
         submitButton.textContent = originalText;
         submitButton.disabled = false;
-    }
-    async function handleFormSubmission() {
-        console.log("Form submission started");
-
-        // ... existing code ...
-
-        try {
-            console.log("Making API call to:", API_ENDPOINT);
-            console.log("Sending data:", data);
-
-            const response = await fetch(API_ENDPOINT, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            });
-
-            console.log("Response status:", response.status);
-            console.log("Response:", response);
-
-            const result = await response.json();
-            console.log("Result:", result);
-
-            // ... rest of code ...
-        } catch (error) {
-            console.error("Detailed error:", error);
-            // ... error handling ...
-        }
     }
 }
 
@@ -176,12 +184,20 @@ function showFormStatus(type, message) {
     const statusDiv = document.getElementById('form-status');
     const statusMessage = document.getElementById('status-message');
 
+    if (!statusDiv || !statusMessage) {
+        console.error('Status elements not found');
+        alert(message); // Fallback
+        return;
+    }
+
     statusDiv.className = `form-status ${type}`;
     statusMessage.textContent = message;
     statusDiv.style.display = 'block';
 
     // Scroll to status message
     statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    console.log(`Status shown: ${type} - ${message}`);
 }
 
 /**
@@ -191,6 +207,12 @@ function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
+
+// Make sure this runs when page loads
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('DOM loaded, initializing contact form');
+    initContactForm();
+});
 
 /**
  * Initialize Scroll Animations
