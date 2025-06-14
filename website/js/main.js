@@ -138,6 +138,35 @@ async function handleFormSubmission() {
         submitButton.textContent = originalText;
         submitButton.disabled = false;
     }
+    async function handleFormSubmission() {
+        console.log("Form submission started");
+
+        // ... existing code ...
+
+        try {
+            console.log("Making API call to:", API_ENDPOINT);
+            console.log("Sending data:", data);
+
+            const response = await fetch(API_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+
+            console.log("Response status:", response.status);
+            console.log("Response:", response);
+
+            const result = await response.json();
+            console.log("Result:", result);
+
+            // ... rest of code ...
+        } catch (error) {
+            console.error("Detailed error:", error);
+            // ... error handling ...
+        }
+    }
 }
 
 /**
