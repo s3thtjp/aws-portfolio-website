@@ -106,7 +106,7 @@ async function handleFormSubmission() {
 
     try {
         // Replace with your actual API Gateway endpoint
-        const API_ENDPOINT = 'https://3d9zoun2z1.execute-api.us-east-1.amazonaws.com/prod/contact';
+        const API_ENDPOINT = 'https://43sug4dn9a.execute-api.us-east-1.amazonaws.com/prod/contact';
 
         const response = await fetch(API_ENDPOINT, {
             method: 'POST',
@@ -161,36 +161,6 @@ function showFormStatus(type, message) {
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
-}
-
-/**
- * Initialize Smooth Scrolling
- */
-function initSmoothScrolling() {
-    const links = document.querySelectorAll('a[href^="#"]');
-
-    links.forEach(link => {
-        link.addEventListener('click', function (event) {
-            const targetId = this.getAttribute('href');
-
-            if (targetId === '#') return;
-
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                event.preventDefault();
-
-                const headerOffset = 80; // Account for fixed header
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
 }
 
 /**
